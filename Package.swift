@@ -13,6 +13,11 @@ let libraryType: PackageDescription.Product.Library.LibraryType? = dynamicLibrar
 
 var package = Package(
     name: "Bluetooth",
+    platforms: [
+        // Set the minimum deployment target for iOS to 13 to support concurrency
+        .iOS(.v13),
+        .macOS(.v10_15), // macOS 10.15+ for Catalyst compatibility
+    ],
     products: [
         .library(
             name: "Bluetooth",
